@@ -31,6 +31,9 @@ public interface LauncherProperties extends HmcProperties {
 
     Property<String> EMAIL = string("hmc.email");
     Property<String> PASSWORD = string("hmc.password");
+    Property<String> USERNAME = string("hmc.username");
+    Property<String> UUID = string("hmc.uuid");
+    Property<String> TOKEN = string("hmc.sessionToken");
 
     Property<Boolean> KEEP_FILES = bool("hmc.keepfiles");
     Property<Boolean> STORE_ACCOUNTS = bool("hmc.store.accounts");

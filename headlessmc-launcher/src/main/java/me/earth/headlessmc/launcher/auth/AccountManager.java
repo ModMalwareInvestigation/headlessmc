@@ -42,6 +42,13 @@ public class AccountManager implements Iterable<Account> {
             return this.login(email, password);
         }
 
+        val username = config.get(LauncherProperties.USERNAME);
+        val uuid = config.get(LauncherProperties.UUID);
+        val sessionToken = config.get(LauncherProperties.TOKEN);
+        if (username != null && uuid != null && sessionToken != null) {
+            return new Account(username, uuid, sessionToken, "", "", "");
+        }
+
         if (offlineChecker.isOffline()) {
             return new Account("Offline", OFFLINE_UUID, "", "", "", "");
         }
